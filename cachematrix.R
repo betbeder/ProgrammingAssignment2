@@ -4,7 +4,7 @@
   makeCacheMatrix <- function(x = matrix()) {
 
     ##  function to set and get the matrix
-    ##  set the inverse and get 
+    ##  then set the inverse and get for input to cacheSolve
     ##  source acknowledged includes material from GUANGMING LANG on http://masterr.org/r/how-to-cache-a-matrix-inversion-in-r/
     
     myinverse = NULL
@@ -12,7 +12,7 @@
       # use `<<-` to assign a value to an object in an environment 
       # different from the current environment. 
       x <<- y
-      # set to NULL
+      # set myinverse to NULL
       myinverse <<- NULL
     }
     get = function() x
@@ -22,7 +22,7 @@
   }
   
   cacheSolve <- function(x, ...) {
-   
+   ## using makeCacheMatrix
     myinverse = x$getinv()
     
     # if already done
